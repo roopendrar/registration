@@ -5,4 +5,5 @@ app_name="app5"
 
 urlpatterns = [
     path('register/',views.register,name="register"),
+    path('multi/',views.multi,name="multi"),
 ]

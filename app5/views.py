@@ -21,3 +21,9 @@ def register(request):
         return HttpResponse("{}<br>{}<br>{}<br>{}<br>{}<br>{}<br>".format(first_name,last_name,email,password,phonenumber,gender,DOB))
     return render(request,"app5/registration.html")
     
+def multi(request):
+    if request.method=="POST":
+        language=request.POST.getlist("language")
+        food=request.POST.getlist("food")
+        return HttpResponse("<h1>{}{}</h1>".format(food,language))
+    return render(request,"app5/multiselect.html")
